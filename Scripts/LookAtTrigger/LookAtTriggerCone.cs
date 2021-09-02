@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class LookAtTriggerCone : MonoBehaviour
 {
@@ -42,6 +44,8 @@ public class LookAtTriggerCone : MonoBehaviour
         //Handles.color = Color.green;
         //Handles.DrawLine(transform.position, center);
 
+        #if UNITY_EDITOR
+
         if (distSq <= distance * distance && - Vector3.Cross(leftEdge, ab).z >= 0f && Vector3.Cross(rightEdge, ab).z >= 0f)
             Handles.color = trueColor;
         else
@@ -53,5 +57,7 @@ public class LookAtTriggerCone : MonoBehaviour
 
         //Handles.DrawLine(leftEdge, rightEdge);
         Handles.DrawSolidArc(enemy, new Vector3(0, 0, 1), rightEdge, angle, distance);
+
+        #endif
     }
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class DistanceRadius2D : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class DistanceRadius2D : MonoBehaviour
 
         float distSq = (ab.x * ab.x) + (ab.y * ab.y);
 
+        #if UNITY_EDITOR
         if (distSq <= (radius * radius)) // faster because no square root
             Handles.color = trueColor;
         else
@@ -33,5 +36,6 @@ public class DistanceRadius2D : MonoBehaviour
 
         Handles.DrawLine(enemy, player, 1f);
 
+        #endif
     }
 }

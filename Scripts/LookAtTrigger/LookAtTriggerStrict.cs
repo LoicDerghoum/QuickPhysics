@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class LookAtTriggerStrict : MonoBehaviour
 {
@@ -27,12 +29,16 @@ public class LookAtTriggerStrict : MonoBehaviour
 
         float dot = Vector3.Dot(vision.normalized, target.normalized);
 
+        #if UNITY_EDITOR
+
         if (dot == 1) // very precise
             Handles.color = trueColor;
         else
             Handles.color = falseColor;
 
         Handles.DrawLine(enemy, vision);
+
+        #endif
 
         //print(dot);
     }
