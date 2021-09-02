@@ -1,9 +1,13 @@
 # QuickPhysics
-Few example for unity physics made from scratch
+## Few example for unity physics made from scratch
 
-- Own Math functions
+### Class
+
+- Own Math class
 - Own 2D Vector class
 - Own 3D Vector class
+
+### Physics
 
 - Distance Radius Trigger 2D & 3D
 - Look-At type trigger Strict & Cone-view
