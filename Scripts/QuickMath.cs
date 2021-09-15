@@ -128,7 +128,7 @@ public class QuickMath
         float x = ((val - minA) / (maxA - minA) * (maxB - minB) + minB);
 
         if (isClamped)
-            x = Clamp(x, minB, maxB);
+            x = Clamp(minB, maxB, x);
 
         return x;
     }
